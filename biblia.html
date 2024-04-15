@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA Bíblica</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #0b1220;
+    }
+    #container {
+        text-align: center;
+    }
+    .emotion-button {
+        padding: 10px 20px;
+        background-color: #000000;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px;
+    }
+    #verse {
+        font-style: italic;
+        font-size: 32px;
+        margin-top: 20px;
+        color: #ffffff;
+    }
+    .emotion-button{
+      color: #ffffff;
+    }
+    h1{
+      color: #4d4d4d;
+      font-size: 70px;
+    }
+   
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>IA Bíblica</h1>
+    <button class="emotion-button" onclick="generateVerse('alegria')">Alegria</button>
+    <button class="emotion-button" onclick="generateVerse('tristeza')">Tristeza</button>
+    <button class="emotion-button" onclick="generateVerse('medo')">Medo</button>
+    <button class="emotion-button" onclick="generateVerse('esperança')">Esperança</button>
+    <div id="verse"></div>
+</div>
+
+<script>
+function generateVerse(emotion) {
+    var verses = {
+        "alegria": [
+            "O Senhor é a minha força e o meu escudo; nele o meu coração confia, e dele recebo ajuda. Meu coração exulta de alegria, e com o meu cântico lhe darei graças. - Salmo 28:7",
+            "O fruto do Espírito é amor, alegria, paz, paciência, amabilidade, bondade, fidelidade. - Gálatas 5:22",
+            "Alegrai-vos sempre no Senhor; outra vez digo, alegrai-vos. - Filipenses 4:4",
+            "Este é o dia que o Senhor fez; regozijemo-nos e alegremo-nos nele. - Salmo 118:24",
+            "A alegria do Senhor é a nossa força. - Neemias 8:10",
+            "Em tua presença há plenitude de alegria; na tua destra, delícias perpetuamente. - Salmo 16:11",
+            "Ainda que a figueira não floresça, nem haja fruto na vide; o produto da oliveira minta, e os campos não produzam mantimento; as ovelhas da malhada sejam arrebatadas, e nos currais não haja vacas, todavia, eu me alegrarei no Senhor, exultarei no Deus da minha salvação. - Habacuque 3:17-18",
+            "Com alegria, tirareis águas das fontes da salvação. - Isaías 12:3",
+            "Bem-aventurados os que têm fome e sede de justiça, porque serão fartos. - Mateus 5:6",
+            "Deus está no meio dela; não será abalada. Deus a ajudará, já ao romper da manhã. - Salmo 46:5"
+        ],
+        "tristeza": [
+            "O Senhor está perto dos que têm o coração quebrantado e salva os de espírito abatido. - Salmo 34:18",
+            "Bem-aventurados os que choram, pois serão consolados. - Mateus 5:4",
+            "O choro pode durar uma noite, mas a alegria vem pela manhã. - Salmo 30:5",
+            "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós. - 1 Pedro 5:7",
+            "Tu contaste as minhas vagueações; põe as minhas lágrimas no teu odre. Não estão elas no teu livro? - Salmo 56:8",
+            "Quando o meu coração se angustiava dentro de mim, então te lembrei dos dias da antiguidade; meditava em todas as tuas obras; considerava as obras das tuas mãos. - Salmo 143:5",
+            "Tu, Senhor, conservarás em perfeita paz aquele cujo propósito está firme, porque em ti confia. - Isaías 26:3",
+            "Ainda que eu ande pelo vale da sombra da morte, não temerei mal algum, porque tu estás comigo; o teu bordão e o teu cajado me consolam. - Salmo 23:4",
+            "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós. - 1 Pedro 5:7",
+            "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei. - Mateus 11:28"
+        ],
+        "medo": [
+            "Pois eu, o Senhor teu Deus, seguro a tua mão direita; sou aquele que te diz: ‘Não temas, eu te ajudarei’. - Isaías 41:13",
+            "O amor expulsa todo medo. - 1 João 4:18",
+            "Não to mandei eu? Esforça-te e tem bom ânimo; não pasmes, nem te espantes, porque o Senhor, teu Deus, é contigo, por onde quer que andares. - Josué 1:9",
+            "Porque eu, o Senhor, teu Deus, te tomo pela tua mão direita e te digo: não temas, que eu te ajudo. - Isaías 41:13",
+            "Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia. - Salmo 46:1",
+            "O Senhor é o meu pastor; nada me faltará. - Salmo 23:1",
+            "No mundo tereis aflições, mas tende bom ânimo; eu venci o mundo. - João 16:33",
+            "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento. - Provérbios 3:5",
+            "No amor não há medo; pelo contrário, o perfeito amor expulsa o medo, porque o medo supõe castigo. Aquele que tem medo não está aperfeiçoado no amor. - 1 João 4:18",
+            "Ainda que eu ande pelo vale da sombra da morte, não temerei mal algum, porque tu estás comigo; o teu bordão e o teu cajado me consolam. - Salmo 23:4"
+        ],
+        "esperança": [
+            "Mas os que esperam no Senhor renovam as suas forças. Voam alto como águias; correm e não ficam exaustos, andam e não se cansam. - Isaías 40:31",
+            "Porque sou eu que conheço os planos que tenho para vocês', diz o Senhor, ‘planos de fazê-los prosperar e não de lhes causar dano, planos de dar-lhes esperança e um futuro. - Jeremias 29:11",
+            "Bem-aventurados os que têm fome e sede de justiça, porque serão fartos. - Mateus 5:6",
+            "Deixe-me ouvir do amor ao romper da manhã, pois em ti confio. Mostra-me o caminho que devo seguir, pois a ti elevo a minha alma. - Salmo 143:8",
+            "E até à velhice eu serei o mesmo e ainda até às cãs eu vos carregarei; eu vos fiz, e eu vos levarei, e eu vos trarei, e vos livrarei. - Isaías 46:4",
+            "Porque o Senhor é a nossa esperança; ele é a nossa segurança. - Jeremias 29:11",
+            "Sê forte e corajoso; não temas, nem te espantes, porque o Senhor, teu Deus, é contigo, por onde quer que andares. - Josué 1:9",
+            "E tudo quanto pedirdes em meu nome, eu o farei, para que o Pai seja glorificado no Filho. - João 14:13",
+            "Portanto, não desfalecemos; mas ainda que o nosso homem exterior se corrompa, o interior, contudo, se renova de dia em dia. - 2 Coríntios 4:16",
+            "Porque aos seus anjos dará ordem a teu respeito, para te guardarem em todos os teus caminhos. - Salmo 91:11"
+        ],
+        // Adicione mais emoções e versículos conforme necessário
+    };
+
+    var randomIndex = Math.floor(Math.random() * verses[emotion].length);
+    var selectedVerse = verses[emotion][randomIndex];
+    document.getElementById('verse').innerHTML = '"' + selectedVerse + '"';
+}
+</script>
+</body>
+</html>
